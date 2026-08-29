@@ -1,0 +1,49 @@
+# Konzeptdokumentation — vorerst nur lokal.
+# Die frühen Kapitel sind ein Entscheidungsprotokoll im Fluss; sie sollen erst
+# öffentlich werden, wenn die Entscheidungen stehen (docs/07, offene Fragen).
+docs/
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+[Dd]ebug/
+[Rr]elease/
+artifacts/
+*.nupkg
+*.snupkg
+
+# Konfiguration und Zugangsdaten — gehört nie ins Repository (docs/16)
+.env
+.env.*
+!.env.example
+appsettings.*.local.json
+secrets.json
+*.pfx
+*.key
+
+# Node / React
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins*
+build/
+.packages
+
+# Werkzeuge und Betriebssystem
+.vs/
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# Testausgaben
+TestResults/
+coverage/
+*.trx
