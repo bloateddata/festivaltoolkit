@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <Description>Kernbausteine des FestivalToolkit: stark typisierte Bezeichner, Zeitabstraktion, Ergebnistypen. Ohne Abhängigkeiten.</Description>
+  </PropertyGroup>
+
+  <!-- Kernel-Schicht: keine Abhängigkeiten. Das ist eine Regel, kein Zufall —
+       durchgesetzt in tests/Architecture. Siehe docs/23-code-structure.md, Teil 2. -->
+
+</Project>

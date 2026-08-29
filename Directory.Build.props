@@ -1,0 +1,51 @@
+<Project>
+
+  <!-- Gemeinsame Vorgaben für ALLE Projekte. Siehe docs/19-build.md, Teil 1. -->
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+  </PropertyGroup>
+
+  <!-- Voraussetzung für die 8-GB-Anforderung aus docs/15-cost.md.
+       Steht hier statt in neun Dateien, damit es kein Dienst vergessen kann. -->
+  <PropertyGroup>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+  </PropertyGroup>
+
+  <!-- Reproduzierbarkeit und Rückführbarkeit auf einen Commit, docs/19 Teil 5. -->
+  <PropertyGroup>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <!-- Paketmetadaten. Die Lizenz wird in src/Shared/Contracts/ überschrieben
+       (Apache-2.0), siehe docs/19-build.md, Teil 4. -->
+  <PropertyGroup>
+    <Authors>bloateddata</Authors>
+    <Company>FestivalToolkit</Company>
+    <Product>FestivalToolkit</Product>
+    <Copyright>Copyright (c) FestivalToolkit contributors</Copyright>
+    <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/bloateddata/festivaltoolkit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bloateddata/festivaltoolkit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>festival;volunteer;ehrenamt</PackageTags>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+</Project>
